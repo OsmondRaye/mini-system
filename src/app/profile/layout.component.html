@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eSports Performance Portal</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://cdn.wallpapersafari.com/54/43/UbLfrJ.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #e6dfdf;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 120vh;
+      margin: 0;
+      padding-top: 50px; /* Add padding at the top to move the card down slightly */
+    }
+
+    .container {
+      max-width: 800px;
+      width: 50%;
+      padding: 30px;
+    }
+
+    .card {
+      background: rgba(56, 55, 55, 0.6);
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+    }
+
+    .card .card-header {
+      background-color: #292b2c;
+      color: #ffffff;
+      font-size: 1.5rem;
+      text-align: center;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .card .card-body {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            ESPORTS PERFORMANCE PORTAL
+          </div>
+          <div class="card-body">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const body = document.body;
+    const card = document.querySelector('.card');
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      card.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        toggleBtn.textContent = 'Toggle Light Mode';
+        toggleBtn.classList.add('light-mode');
+      } else {
+        toggleBtn.textContent = 'Toggle Dark Mode';
+        toggleBtn.classList.remove('light-mode');
+      }
+    });
+  </script>
+</body>
+</html>

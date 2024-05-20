@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eSports Performance Portal</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      position: relative;
+      background-image: url('https://cdn.wallpapersafari.com/54/43/UbLfrJ.png'); /* Replace with a gaming background image */
+      background-size: cover; /* Ensure the background image covers the entire viewport */
+      background-position: center; /* Center the background image */
+      background-repeat: no-repeat; /* Prevent the background image from repeating */
+      color: #b9b4b4;
+      font-family: 'Orbitron', sans-serif; /* Gaming-inspired font */
+    }
+    
+    .content {
+      position: relative;
+      z-index: 1; /* Ensure the content is above the overlay */
+    }
+    .container-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: transform 0.3s, box-shadow 0.3s; /* Add smooth transition effect */
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to cards */
+      overflow: hidden; /* Ensure the pseudo-element stays within the card */
+    }
+    .container-card.button-effect {
+      cursor: pointer; /* Change cursor to pointer on hover to indicate it's clickable */
+    }
+    .container-card.button-effect:hover {
+      transform: scale(1.05); /* Slightly increase size */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Add deeper shadow */
+    }
+    .container-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 0; /* Ensure the overlay is behind the content */
+    }
+    .container-card.button-effect:hover::before {
+      opacity: 1;
+    }
+    .dota2-background {
+      background-image: url('https://wallpapercave.com/wp/wp2178743.jpg'); /* Replace with Dota 2 background image URL */
+      background-size: cover;
+      background-position: center;
+      color: #ffffff; /* Ensuring text is readable on the background */
+    }
+  
+    .mobile-legends-background {
+      background-image: url('https://wallpaperaccess.com/full/3518004.jpg'); /* Replace with Mobile Legends background image URL */
+      background-size: cover;
+      background-position: center;
+      color: #ffffff; /* Ensuring text is readable on the background */
+    }
+    .valorant-background {
+      background-image: url('https://i.ytimg.com/vi/DlmfrnUDZWA/maxresdefault.jpg'); /* Replace with Valorant background image URL */
+      background-size: cover;
+      background-position: center;
+      color: #ffffff; /* Ensuring text is readable on the background */
+    }
+    .button-text {
+      position: relative;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid #f3f1ef; /* Add border */
+      border-radius: 10px;
+      padding: 15px; /* Increase padding */
+      font-weight: bold;
+      font-size: 1.5rem; /* Increase font size */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      margin-top: 20px;
+      display: inline-block;
+      color: #c4c1be; /* Set text color to a contrasting color */
+      transition: background 0.4s; /* Add smooth background transition */
+      z-index: 1; /* Ensure the text is above the overlay */
+    }
+    .button-text:hover {
+      background: rgba(0, 0, 0, 1); /* Darken background on hover */
+    }
+    .link-card {
+      text-decoration: none; /* Remove underline from link */
+      color: inherit; /* Inherit text color */
+    }
+    /* Add this CSS style to make the text bold and give it a gaming vibe */
+    .gaming-text {
+      font-family: 'Orbitron', sans-serif; /* Use a bold font */
+      color: #ffffff; /* Set text color to white */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow effect */
+    }
+    .text-spacing {
+      margin-bottom: 40px; /* Add spacing between text and buttons */
+    }
+    .liked-text {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      position: relative;
+      z-index: 1; /* Ensure the text is above the overlay */
+    }
+    .game-info {
+      margin-top: 10px;
+      text-align: left;
+      color: #b9b4b4;
+      position: relative;
+      z-index: 1; /* Ensure the text is above the overlay */
+    }
+  </style>
+</head>
+<body>
+  <div class="background-overlay"></div>
+  <div class="content p-4 d-flex flex-column">
+    <h1 class="display-4 text-center gaming-text text-spacing">Welcome to eSports Performance Portal</h1>
+    <p class="lead text-center gaming-text text-spacing">Made by the esports community for the esports community.</p>
+
+    <!-- Dota 2 Tournaments button -->
+    <button class="container card container-card button-effect dota2-background" onclick="navigateToDota2()">
+      <div class="button-text">Dota 2 Tournaments</div>
+      <div class="liked-text">83% liked this video game</div>
+      <div class="game-info">
+        <p>Dota 2 is a 2013 multiplayer online battle arena video game by Valve. The game is a sequel to Defense of the Ancients, a community-created mod for Blizzard Entertainment's Warcraft III: Reign of Chaos. </p>
+        <p><strong>Initial release date:</strong> July 9, 2013</p>
+        <p><strong>Developer:</strong> Valve Corporation</p>
+        <p><strong>Mode:</strong> Multiplayer video game</p>
+        <p><strong>Nominations:</strong> British Academy Games Award for Multiplayer, MORE</p>
+        <p><strong>License:</strong> Proprietary license</p>
+        <p><strong>Composers:</strong> Jason Hayes, Tim Larkin</p>
+        <p><strong>Genres:</strong> Multiplayer online battle arena, Action role-playing game</p>
+      </div>
+    </button>
+
+    <!-- Valorant Tournaments button -->
+    <button class="container card container-card button-effect valorant-background" onclick="navigateToValorant()">
+      <div class="button-text">Valorant Tournaments</div>
+      <div class="liked-text">89% liked this video game</div>
+      <div class="game-info">
+        <p>Valorant is a 5v5 character-based tactical shooter developed and published by Riot Games. Each player controls one of several characters called Agents, each with unique abilities. </p>
+        <p><strong>Initial release date:</strong> June 2, 2020</p>
+        <p><strong>Developer:</strong> Riot Games</p>
+        <p><strong>Mode:</strong> Multiplayer video game</p>
+        <p><strong>Nominations:</strong> The Game Award for Best Esports Game, MORE</p>
+        <p><strong>License:</strong> Proprietary license</p>
+        <p><strong>Genres:</strong> Tactical shooter, First-person shooter</p>
+      </div>
+    </button>
+    <!-- Mobile Legends Tournaments button -->
+    <button class="container card container-card button-effect mobile-legends-background" onclick="navigateToMobileLegends()">
+      <div class="button-text">Mobile Legends Tournaments</div>
+      <div class="liked-text">80% liked this video game</div>
+      <div class="game-info">
+        <p>Mobile Legends: Bang Bang is a multiplayer online battle arena mobile game developed and published by Moonton, a subsidiary of ByteDance.</p>
+        <p><strong>Initial release date:</strong> July 11, 2016</p>
+        <p><strong>Developer:</strong> Moonton</p>
+        <p><strong>Mode:</strong> Multiplayer video game</p>
+        <p><strong>Genres:</strong> Multiplayer online battle arena</p>
+      </div>
+    </button>
+  </div>
+
+  <script>
+    // Navigate to Dota 2 Tournaments page
+    function navigateToDota2() {
+      // Redirect or perform any
+      function navigateToDota2() {
+      // Redirect or perform any desired action
+      console.log("Navigating to Dota 2 Tournaments");
+    }
+
+    // Navigate to Valorant Tournaments page
+    function navigateToValorant() {
+      // Redirect or perform any desired action
+      console.log("Navigating to Valorant Tournaments");
+    }
+
+    // Navigate to Mobile Legends Tournaments page
+    function navigateToMobileLegends() {
+      // Redirect or perform any desired action
+      console.log("Navigating to Mobile Legends Tournaments");
+    }
+  </script>
+</body>
+</html>
